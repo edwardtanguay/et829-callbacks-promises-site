@@ -10,9 +10,9 @@ export const getSynchronousEmployees = () => {
 
 export const getAsynchronousEmployees = () => {
 	return new Promise<IEmployee[]>((resolve) => {
-		(async () => {
+		setTimeout(async () => {
 			const employees = (await axios.get(url)).data;
 			resolve(employees);
-		})();
+		}, 2000);
 	})
 }
