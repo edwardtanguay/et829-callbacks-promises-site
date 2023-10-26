@@ -1,8 +1,9 @@
 import './style.css'
 import * as dataLoader from './dataLoader';
 
-const employees = await dataLoader.getAsynchronousEmployees();
-console.log('main', employees);
+dataLoader.getAsynchronousEmployees((employees) => {
+	console.log('main', employees);
+});
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = /*html*/ `
 	<h2>Asynchronous Functions with Callbacks and Promises</h2>
