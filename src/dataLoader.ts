@@ -8,7 +8,7 @@ export const getSynchronousEmployees = () => {
 	return employees;
 }
 
-export const getAsynchronousEmployees = async () => {
+export const getAsynchronousEmployees = () => {
 	return new Promise<IEmployee[]>((resolve) => {
 		(async () => {
 			const employees = (await axios.get(url)).data;
